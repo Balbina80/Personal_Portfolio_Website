@@ -445,19 +445,60 @@ p {
 }
 
 .project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px 22px 0 0;
   min-height: 240px;
 }
 
-.placeholder-fitness {
-  background:
-    radial-gradient(circle at top right, rgba(245, 166, 35, 0.18), transparent 25%),
-    linear-gradient(135deg, rgba(32, 38, 51, 0.96), rgba(60, 69, 88, 0.88));
+.project-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease;
 }
 
-.placeholder-photo {
-  background:
-    radial-gradient(circle at top right, rgba(245, 166, 35, 0.16), transparent 25%),
-    linear-gradient(135deg, rgba(73, 78, 89, 0.96), rgba(38, 43, 53, 0.92));
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 18, 24, 0.8),
+    rgba(15, 18, 24, 0.3)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.project-overlay span {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  transform: translateY(10px);
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.06);
+  filter: brightness(0.7);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-overlay span {
+  transform: translateY(0);
 }
 
 .project-content {
@@ -700,20 +741,14 @@ p {
   .brand-sub {
     font-size: 0.74rem;
   }
+
+  .project-image img {
+    height: 220px;
+  }
+
+  .project-overlay span {
+    font-size: 0.82rem;
+    padding: 0.7rem 0.95rem;
+  }
 }
 
-.project-image {
-  overflow: hidden;
-  border-radius: 22px 22px 0 0;
-}
-
-.project-image img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
-}
