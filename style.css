@@ -261,6 +261,7 @@ p {
 
 .hero-highlights-box {
   padding: 1.4rem;
+  animation: fadeUpSoft 1s ease forwards;
 }
 
 .hero-highlights {
@@ -384,20 +385,82 @@ p {
     var(--bg-card);
 }
 
+/* ABOUT IMAGE */
+
 .about-image {
+  position: relative;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  animation: fadeUpSoft 1s ease forwards;
+}
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 80%;
+  border-radius: 40px;
+
+  background: radial-gradient(
+    circle at left,
+    rgba(245, 166, 35, 0.18),
+    rgba(245, 166, 35, 0.08),
+    transparent 70%
+  );
+
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: -36px;
+  border-radius: 42px;
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(245, 166, 35, 0.08),
+    rgba(64, 88, 160, 0.15),
+    transparent 72%
+  );
+  filter: blur(42px);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .about-image img {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  max-width: 380px;
+  max-width: 320px;
   border-radius: 22px;
   object-fit: cover;
+  filter: brightness(0.9) contrast(1.02);
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.45),
-    0 0 50px rgba(245, 166, 35, 0.08);
-  filter: brightness(0.96) contrast(1.04);
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    0 0 60px rgba(245, 166, 35, 0.08);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.02);
+  box-shadow:
+    -18px 30px 70px rgba(0, 0, 0, 0.6),  
+    0 0 40px rgba(245, 166, 35, 0.12);   
+}
+
+.about-image:hover::before {
+  opacity: 1;
 }
 
 /* PROJECTS */
@@ -609,6 +672,17 @@ p {
   }
 }
 
+@keyframes fadeUpSoft {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 1100px) {
@@ -638,6 +712,11 @@ p {
 
   .about-image {
     justify-content: center;
+    min-height: auto;
+  }
+
+  .about-image img {
+    max-width: 380px;
   }
 }
 
@@ -674,6 +753,11 @@ p {
   .why-grid,
   .hero-highlights {
     grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    max-width: 320px;
+    border-radius: 24px;
   }
 
   .brand-sub {
