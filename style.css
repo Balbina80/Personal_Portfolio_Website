@@ -444,8 +444,8 @@ p {
   object-fit: cover;
   filter: brightness(0.9) contrast(1.02);
   box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.45),
-    0 0 60px rgba(245, 166, 35, 0.08);
+  -20px 35px 90px rgba(0, 0, 0, 0.65),
+  0 0 60px rgba(245, 166, 35, 0.10);
   transition:
     transform 0.45s ease,
     box-shadow 0.45s ease,
@@ -453,10 +453,11 @@ p {
 }
 
 .about-image:hover img {
-  transform: scale(1.02);
+  transform: scale(1.025);
+  filter: brightness(0.94) contrast(1.05);
   box-shadow:
-    -18px 30px 70px rgba(0, 0, 0, 0.6),  
-    0 0 40px rgba(245, 166, 35, 0.12);   
+    -25px 45px 110px rgba(0, 0, 0, 0.75),
+    0 0 80px rgba(245, 166, 35, 0.14);
 }
 
 .about-image:hover::before {
