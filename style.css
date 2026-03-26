@@ -252,7 +252,8 @@ p {
 .project-card,
 .service-card,
 .why-card,
-.contact-box {
+.contact-box,
+.pricing-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 28px;
@@ -364,7 +365,8 @@ p {
 .section-card p,
 .project-content p,
 .service-card p,
-.why-card p {
+.why-card p,
+.pricing-card p {
   font-size: 0.98rem;
 }
 
@@ -404,14 +406,12 @@ p {
   width: 120px;
   height: 80%;
   border-radius: 40px;
-
   background: radial-gradient(
     circle at left,
     rgba(245, 166, 35, 0.18),
     rgba(245, 166, 35, 0.08),
     transparent 70%
   );
-
   filter: blur(30px);
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -444,8 +444,8 @@ p {
   object-fit: cover;
   filter: brightness(0.9) contrast(1.02);
   box-shadow:
-  -20px 35px 90px rgba(0, 0, 0, 0.65),
-  0 0 60px rgba(245, 166, 35, 0.10);
+    -20px 35px 90px rgba(0, 0, 0, 0.65),
+    0 0 60px rgba(245, 166, 35, 0.10);
   transition:
     transform 0.45s ease,
     box-shadow 0.45s ease,
@@ -479,7 +479,8 @@ p {
 
 .project-card:hover,
 .service-card:hover,
-.why-card:hover {
+.why-card:hover,
+.pricing-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow);
   border-color: rgba(245, 166, 35, 0.28);
@@ -560,6 +561,77 @@ p {
   font-size: 1.15rem;
   margin-bottom: 0.7rem;
   color: var(--white);
+}
+
+/* PRICING */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.pricing-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.65rem;
+  color: var(--white);
+}
+
+.price {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.pricing-card ul {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0 0 1.6rem;
+  padding: 0;
+}
+
+.pricing-card ul li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(245, 166, 35, 0.22);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pricing-card.featured {
+  background:
+    radial-gradient(circle at top center, rgba(245, 166, 35, 0.12), transparent 34%),
+    var(--bg-card);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  transform: scale(1.03);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.03) translateY(-6px);
+  border-color: rgba(245, 166, 35, 0.45);
 }
 
 /* WHY ME */
@@ -697,7 +769,8 @@ p {
   .hero-grid,
   .two-col,
   .contact-box,
-  .projects-grid {
+  .projects-grid,
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 
@@ -718,6 +791,11 @@ p {
 
   .about-image img {
     max-width: 380px;
+  }
+
+  .pricing-card.featured,
+  .pricing-card.featured:hover {
+    transform: none;
   }
 }
 
@@ -771,5 +849,13 @@ p {
 
   .hero-mini {
     font-size: 0.8rem;
+  }
+
+  .pricing-card {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .price {
+    font-size: 1.7rem;
   }
 }
