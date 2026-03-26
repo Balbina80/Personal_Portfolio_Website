@@ -769,14 +769,17 @@ p {
   .hero-grid,
   .two-col,
   .contact-box,
-  .projects-grid,
-  .pricing-grid {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 
   .cards-grid,
   .why-grid,
   .hero-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -830,7 +833,8 @@ p {
 
   .cards-grid,
   .why-grid,
-  .hero-highlights {
+  .hero-highlights,
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 
