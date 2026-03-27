@@ -10,33 +10,45 @@
 <body>
 
   <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="#home" class="brand">
-        <img src="images/BARBARA JASKIEWICZ_LOGO.png" alt="BJ Studio logo" class="logo">
-        <span class="brand-text">
-          <span class="brand-name">BJ Studio</span>
-          <span class="brand-sub">by Barbara Jaskiewicz</span>
-        </span>
-      </a>
+  <div class="container nav-wrapper">
+    <a href="#home" class="brand">
+      <img src="images/BARBARA JASKIEWICZ_LOGO.png" alt="BJ Studio logo" class="logo">
+      <span class="brand-text">
+        <span class="brand-name">BJ Studio</span>
+        <span class="brand-sub">by Barbara Jaskiewicz</span>
+      </span>
+    </a>
 
-      <nav class="site-nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <div class="lang-switch">
-        <a href="index.html" class="active">EN</a>
-        <a href="index-pl.html">PL</a>
-      </div>
+    <div class="mobile-overlay"></div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="mobile-lang-switch">
+          <a href="index.html" class="active">EN</a>
+          <a href="index-pl.html">PL</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch desktop-lang-switch">
+      <a href="index.html" class="active">EN</a>
+      <a href="index-pl.html">PL</a>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <section class="hero" id="home">
@@ -404,6 +416,35 @@
   </footer>
 
   <a href="#contact" class="floating-cta">Start your project</a>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  const navLinks = document.querySelectorAll('.site-nav a');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  function closeMenu() {
+    siteNav.classList.remove('active');
+    menuToggle.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+</script>
 
 </body>
 </html>
