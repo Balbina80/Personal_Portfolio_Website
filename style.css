@@ -634,6 +634,7 @@ p {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   align-items: stretch;
+  margin-bottom: 2.2rem;
 }
 
 .pricing-card {
@@ -704,20 +705,21 @@ p {
     radial-gradient(circle at top center, rgba(245, 166, 35, 0.14), transparent 34%),
     linear-gradient(180deg, #2a303a, #242933);
   border: 1px solid rgba(245, 166, 35, 0.35);
-  transform: scale(1.03);
+  transform: translateY(-6px);
 }
 
 .pricing-card.featured:hover {
-  transform: scale(1.03) translateY(-6px);
+  transform: translateY(-10px);
   border-color: rgba(245, 166, 35, 0.45);
 }
 
 .pricing-note {
   max-width: 760px;
-  margin: 1.7rem auto 0;
+  margin: 0 auto;
   text-align: center;
   font-size: 0.92rem;
   color: var(--muted);
+  line-height: 1.7;
 }
 
 /* PROCESS */
