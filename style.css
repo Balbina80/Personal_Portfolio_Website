@@ -1201,27 +1201,38 @@ p {
   }
 
   .mobile-lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 0.8rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
 
-  .mobile-lang-switch a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 52px;
-    padding: 0.5rem 0.85rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--muted);
-    font-size: 0.82rem;
-    font-weight: 700;
-  }
+  margin-top: 1rem;
+  padding-top: 1.2rem;
+}
+
+ .mobile-lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 60px;
+  height: 42px;
+  padding: 0 1.2rem;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  line-height: 1;
+  text-align: center;
+
+  transition: all 0.25s ease;
+}
 
   .mobile-lang-switch a {
   transition: all 0.25s ease;
