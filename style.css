@@ -848,6 +848,21 @@ p {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.contact-note {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  opacity: 0.9;
+}
+
+.form-note {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0.8;
+}
+
 /* FOOTER */
 
 .site-footer {
