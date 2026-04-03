@@ -68,7 +68,7 @@ A premium website created for an Italian pizza catering business in Northampton,
 
 If you are looking for a modern website for your business or personal brand, feel free to get in touch:
 
-📧 Email: kontakt@bjdesign.pl
+📧 Email: contact@bjdesign.co.uk
 
 ---
 
