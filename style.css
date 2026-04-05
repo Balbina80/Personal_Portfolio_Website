@@ -1657,3 +1657,17 @@ p {
     margin-top: 0.35rem;
   }
 }
+
+.logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* hover subtle glow */
+
+.logo:hover {
+  filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.4));
+  transition: 0.3s ease;
+}
