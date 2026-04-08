@@ -1677,3 +1677,19 @@ p {
     margin-top: 0.35rem;
   }
 }
+
+.footer-language-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer-language-links a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+
+.footer-language-links a:hover {
+  color: var(--accent);
+}
