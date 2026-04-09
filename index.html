@@ -143,8 +143,8 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-outline">Get a Quote</a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+            <a href="#contact" class="btn btn-primary">Start Your Project</a>
           </div>
 
           <p class="hero-mini">
@@ -178,7 +178,7 @@
       </div>
     </section>
 
-    <section class="about section" id="about">
+    <section class="about section reveal-fade" id="about">
       <div class="container two-col">
         <div class="section-card soft-card">
           <p class="section-tag">About</p>
@@ -205,7 +205,7 @@
       </div>
     </section>
 
-    <section class="projects section" id="projects">
+    <section class="projects section reveal-fade" id="projects">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Projects</p>
@@ -312,7 +312,7 @@
       </div>
     </section>
 
-    <section class="services section" id="services">
+    <section class="services section reveal-fade" id="services">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Services</p>
@@ -344,7 +344,7 @@
       </div>
     </section>
 
-    <section class="pricing section" id="pricing">
+    <section class="pricing section reveal-fade" id="pricing">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Pricing</p>
@@ -401,7 +401,7 @@
       </div>
     </section>
 
-    <section class="process section" id="process">
+    <section class="process section reveal-fade" id="process">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Process</p>
@@ -433,7 +433,7 @@
       </div>
     </section>
 
-    <section class="why-me section">
+    <section class="why-me section reveal-fade">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Why Work With Me</p>
@@ -464,7 +464,7 @@
       </div>
     </section>
 
-    <section class="testimonials section" id="testimonials">
+    <section class="testimonials section reveal-fade" id="testimonials">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Testimonials</p>
@@ -500,7 +500,7 @@
       </div>
     </section>
 
-    <section class="faq section" id="faq">
+    <section class="faq section reveal-fade" id="faq">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">FAQ</p>
@@ -532,7 +532,7 @@
       </div>
     </section>
 
-    <section class="contact section" id="contact">
+    <section class="contact section reveal-fade" id="contact">
       <div class="container contact-box">
 
         <div class="contact-text">
@@ -598,7 +598,7 @@
       </div>
     </section>
 
-<section class="cta-premium">
+<section class="cta-premium reveal-fade">
   <div class="container">
 
     <div class="cta-premium-box">
@@ -633,6 +633,9 @@
 
   </div>
 </section>
+
+  
+  <a href="#contact" class="floating-cta" aria-label="Start your project">Start Project</a>
 
   </main>
 
@@ -708,6 +711,25 @@
     navLinks.forEach((link) => {
       link.addEventListener("click", closeMenu);
     });
+
+    const revealFadeElements = document.querySelectorAll(".reveal-fade");
+
+    if (revealFadeElements.length) {
+      const fadeObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      revealFadeElements.forEach((element) => fadeObserver.observe(element));
+    }
+
   </script>
 </body>
 </html>
