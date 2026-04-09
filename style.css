@@ -1940,15 +1940,17 @@ p {
 }
 
 /* =========================
-   SCROLL REVEAL 
+   NEXT LEVEL MOTION SYSTEM
    ========================= */
 
+/* SCROLL REVEAL */
 .reveal-fade {
   opacity: 0;
   transform: translateY(45px) scale(0.97);
   transition:
     opacity 1s ease,
     transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-fade.is-visible {
@@ -1956,10 +1958,151 @@ p {
   transform: translateY(0) scale(1);
 }
 
+/* subtle stagger feel by section */
+.about.reveal-fade { transition-delay: 0.04s; }
+.projects.reveal-fade { transition-delay: 0.07s; }
+.services.reveal-fade { transition-delay: 0.1s; }
+.pricing.reveal-fade { transition-delay: 0.13s; }
+.process.reveal-fade { transition-delay: 0.16s; }
+.why-me.reveal-fade { transition-delay: 0.18s; }
+.testimonials.reveal-fade { transition-delay: 0.2s; }
+.faq.reveal-fade { transition-delay: 0.22s; }
+.contact.reveal-fade { transition-delay: 0.24s; }
+.cta-premium.reveal-fade { transition-delay: 0.1s; }
+
+/* CTA premium stronger entrance */
 .cta-premium.reveal-fade {
   transform: translateY(60px) scale(0.96);
 }
 
-.cta-premium.is-visible {
+.cta-premium.reveal-fade.is-visible {
   transform: translateY(0) scale(1);
+}
+
+/* PREMIUM CARD HOVER */
+.project-card,
+.service-card,
+.why-card,
+.pricing-card,
+.testimonial-card,
+.mini-project-card,
+.highlight-item {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    filter 0.35s ease;
+}
+
+.project-card:hover,
+.service-card:hover,
+.why-card:hover,
+.pricing-card:hover,
+.testimonial-card:hover,
+.mini-project-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.30),
+    0 0 26px rgba(245, 166, 35, 0.10);
+  border-color: rgba(245, 166, 35, 0.30);
+}
+
+.highlight-item:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.22),
+    0 0 18px rgba(245, 166, 35, 0.10);
+}
+
+/* ULTRA PREMIUM BUTTON SHIMMER */
+.btn {
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255,255,255,0.08) 45%,
+    transparent 100%
+  );
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  left: 130%;
+}
+
+/* CTA GLOW PULSE */
+.cta-premium-box {
+  animation: ctaPulse 5.5s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow:
+      0 18px 50px rgba(0,0,0,0.22),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  50% {
+    box-shadow:
+      0 24px 60px rgba(0,0,0,0.28),
+      0 0 34px rgba(245,166,35,0.10),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+}
+
+/* FLOATING CTA ENTRANCE */
+.floating-cta {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: floatingCtaIn 0.7s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes floatingCtaIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LUXURY IMAGE LIFT */
+.project-image img,
+.mini-project-image img,
+.about-image img {
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* MOBILE SAFETY */
+@media (max-width: 768px) {
+  .reveal-fade,
+  .cta-premium.reveal-fade {
+    transform: translateY(28px) scale(0.99);
+  }
+
+  .project-card:hover,
+  .service-card:hover,
+  .why-card:hover,
+  .pricing-card:hover,
+  .testimonial-card:hover,
+  .mini-project-card:hover,
+  .highlight-item:hover {
+    transform: translateY(-4px) scale(1.005);
+  }
+
+  .cta-premium-box {
+    animation-duration: 6.5s;
+  }
 }
