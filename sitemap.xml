@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://bjdesign.co.uk/index.html</loc>
+    <loc>https://bjdesign.co.uk/</loc>
   </url>
 
   <url>
@@ -10,11 +10,63 @@
   </url>
 
   <url>
+    <loc>https://bjdesign.co.uk/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/about-pl.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/projects.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/projects-pl.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/services.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/services-pl.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/pricing.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/pricing-pl.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/contact.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/contact-pl.html</loc>
+  </url>
+
+  <url>
     <loc>https://bjdesign.co.uk/small-business-website.html</loc>
   </url>
 
- <url>
+  <url>
     <loc>https://bjdesign.co.uk/small-business-website-pl.html</loc>
   </url>
- 
+
+  <url>
+    <loc>https://bjdesign.co.uk/web-design-northampton.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/web-design-peterborough.html</loc>
+  </url>
+
+  <url>
+    <loc>https://bjdesign.co.uk/web-design-uk.html</loc>
+  </url>
+
 </urlset>
