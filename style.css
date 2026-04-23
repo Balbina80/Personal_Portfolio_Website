@@ -326,11 +326,11 @@ p {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(5,7,13,0.10) 0%,
-    rgba(5,7,13,0.22) 34%,
-    rgba(5,7,13,0.72) 58%,
-    rgba(5,7,13,0.94) 76%,
-    rgba(5,7,13,0.99) 100%
+    rgba(5,7,13,0.04) 0%,
+    rgba(5,7,13,0.10) 30%,
+    rgba(5,7,13,0.48) 58%,
+    rgba(5,7,13,0.82) 76%,
+    rgba(5,7,13,0.95) 100%
   );
   z-index: 1;
 }
@@ -365,7 +365,7 @@ p {
   object-fit: contain;
   object-position: left center;
   transform: translateX(0);
-  filter: brightness(0.72) contrast(1.02) saturate(0.96);
+  filter: brightness(1.08) contrast(1.04) saturate(0.98);
 }
 
 .hero-content {
@@ -1215,7 +1215,7 @@ p {
     object-fit: contain;
     object-position: center top;
     transform: none;
-    filter: brightness(0.58) contrast(1.02) saturate(0.95);
+    filter: brightness(0.9) contrast(1.03) saturate(0.98);
   }
 
   .hero-content {
@@ -1565,3 +1565,4 @@ p {
   color: var(--muted);
   opacity: 0.8;
 }
+
