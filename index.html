@@ -18,6 +18,14 @@
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
 
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="mobile-overlay"></div>
+
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -90,6 +98,11 @@
           Barbara created a strong, professional website for my business. It looks amazing and brought me more enquiries within the first weeks.
         </p>
 
+        <div class="case-study-results">
+          <div class="result-chip">More premium image</div>
+          <div class="result-chip">Clearer offer</div>
+        </div>
+
         <div class="testimonial-author">
           <strong>AJ Fitness</strong>
           <span>Personal Training</span>
@@ -106,6 +119,11 @@
         <p class="testimonial-quote">
           The website looks elegant and professional, and it presents our offer in a much clearer way. It really helped elevate the brand.
         </p>
+
+      <div class="case-study-results">
+        <div class="result-chip">More premium image</div>
+        <div class="result-chip">Clearer offer</div>
+      </div>
 
         <div class="testimonial-author">
           <strong>Sergio &amp; Robi Pizzeria</strong>
@@ -124,12 +142,99 @@
           Clean, elegant and thoughtfully designed. The website feels refined and gives my business a much stronger online presence.
         </p>
 
+        <div class="case-study-results">
+          <div class="result-chip">More premium image</div>
+          <div class="result-chip">Clearer offer</div>
+        </div>
+
         <div class="testimonial-author">
           <strong>Static Emotion</strong>
           <span>Photography</span>
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<section class="case-study-home">
+  <div class="container">
+
+    <div class="case-study-heading">
+      <p class="eyebrow">Case study</p>
+      <h2>Design that looks premium — and supports real business results</h2>
+      <p>
+        A good website should not only look elegant. It should build trust, present the offer clearly and help turn visitors into real enquiries.
+      </p>
+    </div>
+
+    <article class="case-study-card">
+      <div class="case-study-grid">
+
+        <div class="case-study-visual">
+          <img src="images/aj-fitnes-mockup.png" alt="AJ Fitness website preview">
+        </div>
+
+        <div class="case-study-content">
+          <p class="case-study-kicker">Featured project</p>
+          <h3>AJ Fitness</h3>
+          <p class="case-study-intro">
+            A premium multi-page website created for a personal trainer who needed a stronger online presence, clearer structure and a more professional brand image.
+          </p>
+
+          <div class="case-study-points">
+            <div class="case-study-point">
+              <span>Challenge</span>
+              <p>
+                The previous online presence did not fully reflect the quality of the service and lacked a clear path for potential clients.
+              </p>
+            </div>
+
+            <div class="case-study-point">
+              <span>Solution</span>
+              <p>
+                I designed a stronger visual direction, improved the structure of the content and created a modern layout focused on trust, clarity and action.
+              </p>
+            </div>
+
+            <div class="case-study-point">
+              <span>Result</span>
+              <p>
+                The final website feels more premium, presents the business more professionally and supports more confident enquiries from potential clients.
+              </p>
+            </div>
+          </div>
+
+          <div class="case-study-results">
+            <div class="result-chip">Stronger first impression</div>
+            <div class="result-chip">Clearer client journey</div>
+            <div class="result-chip">More premium presentation</div>
+          </div>
+
+          <a href="projects.html" class="case-study-link">View more projects</a>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="final-cta-premium">
+  <div class="container">
+    <p class="eyebrow">Start your project</p>
+
+    <h2>
+      Ready for a website that looks premium and helps your business grow?
+    </h2>
+
+    <p>
+      If you want a website that feels refined, builds trust and supports real enquiries, let’s create it together.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn btn-primary">Get your quote</a>
+      <a href="projects.html" class="btn btn-outline">See my work</a>
     </div>
   </div>
 </section>
@@ -148,5 +253,31 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  const navLinks = document.querySelectorAll('.site-nav a');
+
+  if (menuToggle && siteNav && overlay) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+</script>
+
 </body>
 </html>
