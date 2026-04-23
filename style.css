@@ -1275,12 +1275,11 @@ p {
     border-left: none;
   }
 
-  .two-col-page,
-  .two-col {
+.two-col-page,
+.two-col {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-  gap: clamp(28px, 3vw, 42px);
-  align-items: stretch;
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
 
   .projects-grid,
