@@ -523,22 +523,26 @@ p {
 
 /* interior pages */
 .page-shell {
-  padding: clamp(126px, 12vw, 156px) 0 clamp(84px, 8vw, 120px);
+  padding: clamp(136px, 12vw, 156px) 0 clamp(84px, 8vw, 120px);
 }
 
 .page-hero {
-  max-width: 880px;
-  margin: 0 auto 44px;
+  max-width: 920px;
+  margin: 0 auto 56px;
   text-align: center;
 }
 
 .page-hero h1 {
-  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  font-size: clamp(2.4rem, 3.8vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
   text-wrap: balance;
+  max-width: 13ch;
+  margin: 0 auto;
 }
 
 .page-hero p {
-  font-size: clamp(0.98rem, 1.1vw, 1.1rem);
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
   max-width: 62ch;
   margin: 18px auto 0;
 }
@@ -590,6 +594,7 @@ p {
 .page-card p {
   max-width: 48ch;
 }
+
 .page-card h2,
 .section-card h2,
 .contact-text h2 {
@@ -1495,4 +1500,68 @@ p {
   .project-results {
     max-width: 100%;
   }
+}
+
+.contact-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(20,24,36,0.85), rgba(10,12,18,0.9));
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.contact-text {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d4a34a, #b68226);
+  color: #111;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(212,163,74,0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(212,163,74,0.35);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact-note {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  opacity: 0.8;
 }
