@@ -604,19 +604,19 @@ p {
   margin-bottom: 0;
 }
 
-.side-image,
-.about-image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 100%;
+.side-image img,
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(0.9);
+  transform-origin: center;
+  object-position: center 32%;
 }
 
 .side-image,
 .about-image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 100%;
-  height: 100%;
+  max-height: 520px;
 }
 
 .projects-grid,
@@ -1045,6 +1045,21 @@ p {
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .before-after-images {
+    min-height: auto;
+    padding: 20px 20px 0;
+  }
+
+  .before-after-shot:first-child {
+    flex-basis: 50%;
+    transform: translateX(16px) scale(0.96);
+  }
+
+  .before-after-shot:last-child {
+    flex-basis: 54%;
+    transform: translateX(-16px) scale(1);
+  }
 }
 
 /* mobile nav and layout */
@@ -1269,6 +1284,25 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .before-after-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 18px 18px 0;
+  }
+
+  .before-after-shot:first-child,
+  .before-after-shot:last-child {
+    flex: initial;
+    transform: none;
+    opacity: 1;
+  }
+
+  .before-after-card:hover .before-after-shot:first-child,
+  .before-after-card:hover .before-after-shot:last-child {
+    transform: none;
+  }
+
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -1333,5 +1367,60 @@ p {
 
   .hero-mini {
     font-size: 0.88rem;
+  }
+
+  .before-after-label {
+    top: 12px;
+    left: 12px;
+  }
+}
+.before-after-card {
+  overflow: hidden;
+}
+
+.before-after-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 18px 18px 0;
+}
+
+.before-after-shot {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.before-after-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.before-after-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(5, 7, 13, 0.78);
+  border: 1px solid rgba(212, 163, 74, 0.26);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .before-after-images {
+    grid-template-columns: 1fr;
   }
 }
