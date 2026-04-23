@@ -18,14 +18,6 @@
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
 
-    <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="mobile-overlay"></div>
-
     <nav class="site-nav">
       <ul>
         <li><a href="index-pl.html">Start</a></li>
@@ -56,6 +48,122 @@
   </div>
 </section>
 
+<article class="project-card before-after-card">
+  <div class="before-after-compare">
+    
+    <div class="compare-panel">
+      <span class="compare-badge">Before</span>
+      <img src="images/shiny-clean-before.png" alt="Stara wersja strony Shiny Clean">
+    </div>
+
+    <div class="compare-panel">
+      <span class="compare-badge compare-badge-after">After</span>
+      <img src="images/mb-shiny-clean-after.png" alt="Nowa strona MB Shiny Clean po redesignie">
+    </div>
+
+  </div>
+
+  <div class="project-copy-card">
+    <p class="kicker">Redesign strony firmy sprzątającej</p>
+
+    <h3>MB Shiny Clean</h3>
+
+    <p>
+      Kompletny redesign strony — od przestarzałej, prostej wersji do nowoczesnej, estetycznej i bardziej premium prezentacji, która buduje zaufanie i zwiększa liczbę zapytań.
+    </p>
+
+    <ul class="project-results">
+      <li>Lepsza struktura strony</li>
+      <li>Nowoczesny wygląd</li>
+      <li>Większe zaufanie i więcej zapytań</li>
+    </ul>
+
+    <a class="project-link" href="https://shiny-clean.co.uk" target="_blank" rel="noopener">
+      Zobacz stronę
+    </a>
+  </div>
+</article>
+
+<section class="trusted-strip">
+  <div class="container">
+    <p class="eyebrow">Zaufani klienci</p>
+    <div class="trusted-logos">
+      <span>AJ Fitness</span>
+      <span>Sergio &amp; Robi Pizzeria</span>
+      <span>Static Emotion</span>
+      <span>MB Shiny Clean</span>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials premium-testimonials">
+  <div class="container">
+
+    <p class="eyebrow">Opinie klientów</p>
+    <h2 class="testimonials-title">Co mówią moi klienci</h2>
+    <div class="testimonials-divider"><span></span></div>
+
+    <div class="testimonials-grid">
+
+      <!-- 1 -->
+      <article class="testimonial-card luxe-card">
+        <div class="testimonial-logo-wrap">
+          <img src="images/aj-fitness-logo.png" alt="AJ Fitness logo" class="testimonial-logo">
+        </div>
+
+        <p class="testimonial-stars">★★★★★</p>
+
+        <p class="testimonial-quote">
+          Barbara stworzyła nowoczesną, profesjonalną stronę dla mojego biznesu. Wygląda świetnie i już w pierwszych tygodniach przyniosła więcej zapytań.
+        </p>
+
+        <div class="testimonial-author">
+          <strong>AJ Fitness</strong>
+          <span>Trening personalny</span>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="testimonial-card luxe-card">
+        <div class="testimonial-logo-wrap">
+          <img src="images/sergio-robi-logo.png" alt="Sergio &amp; Robi logo" class="testimonial-logo">
+        </div>
+
+        <p class="testimonial-stars">★★★★★</p>
+
+        <p class="testimonial-quote">
+          Strona wygląda elegancko i profesjonalnie, a oferta jest teraz dużo bardziej czytelna. To naprawdę podniosło poziom naszej marki.
+        </p>
+
+        <div class="testimonial-author">
+          <strong>Sergio &amp; Robi Pizzeria</strong>
+          <span>Catering włoski</span>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="testimonial-card luxe-card">
+        <div class="testimonial-logo-wrap">
+          <img src="images/Owl and camera logo design.png" alt="Static Emotion logo" class="testimonial-logo">
+        </div>
+
+        <p class="testimonial-stars">★★★★★</p>
+
+        <p class="testimonial-quote">
+          Dokładnie to, czego potrzebowałam jako fotograf — elegancka, minimalistyczna strona, skupiona na moich zdjęciach.
+        </p>
+
+        <div class="testimonial-author">
+          <strong>Static Emotion</strong>
+          <span>Fotografia</span>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
   </main>
   <footer class="footer">
     <div class="container footer-inner">
@@ -70,33 +178,5 @@
       </div>
     </div>
   </footer>
-<script>
-  (function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const siteNav = document.querySelector('.site-nav');
-    const overlay = document.querySelector('.mobile-overlay');
-    const navLinks = document.querySelectorAll('.site-nav a');
-
-    if (!menuToggle || !siteNav || !overlay) return;
-
-    function closeMenu() {
-      document.body.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = !document.body.classList.contains('menu-open');
-      document.body.classList.toggle('menu-open');
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    overlay.addEventListener('click', closeMenu);
-    navLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900) closeMenu();
-    });
-  })();
-</script>
 </body>
 </html>
