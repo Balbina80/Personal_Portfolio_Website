@@ -487,7 +487,8 @@ p {
   color: #322a20;
   border-top-left-radius: 52% 52px;
   border-top-right-radius: 52% 52px;
-  margin-top: -26px;
+  margin-top: 80px;
+  padding-top: 50px;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -1374,53 +1375,124 @@ p {
     left: 12px;
   }
 }
+
 .before-after-card {
   overflow: hidden;
+  max-width: 880px;
+  margin: -45px auto 0;
 }
 
-.before-after-images {
+.before-after-compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   padding: 18px 18px 0;
+  max-width: 880px;
+  margin: 0 auto;
 }
 
-.before-after-shot {
+.compare-panel {
   position: relative;
-  border-radius: 18px;
+  border-radius: 16px;
   overflow: hidden;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  height: 300px;
 }
 
-.before-after-shot img {
+.compare-panel img {
   width: 100%;
-  aspect-ratio: 16 / 11;
+  height: 100%;
   object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
-.before-after-label {
+/* badge */
+.compare-badge {
   position: absolute;
   top: 12px;
   left: 12px;
   z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 30px;
-  padding: 0 10px;
+  padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(5, 7, 13, 0.78);
-  border: 1px solid rgba(212, 163, 74, 0.26);
+  background: rgba(9, 11, 18, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
   color: var(--white);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-@media (max-width: 640px) {
-  .before-after-images {
+.compare-badge-after {
+  border-color: rgba(212, 163, 74, 0.4);
+  box-shadow: 0 0 18px rgba(212, 163, 74, 0.12);
+}
+
+/* copy */
+.before-after-card .project-copy-card {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 20px 18px 22px;
+}
+
+.before-after-card .project-copy-card h3 {
+  font-size: 1.2rem;
+}
+
+.before-after-card .project-copy-card p {
+  max-width: 680px;
+}
+
+.project-results {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 8px;
+  max-width: 680px;
+}
+
+.project-results li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.project-results li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .before-after-card {
+    max-width: 100%;
+  }
+
+  .before-after-compare {
     grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .compare-panel {
+    height: 200px;
+  }
+
+  .before-after-card .project-copy-card {
+    max-width: 100%;
+    padding: 18px 18px 20px;
+  }
+
+  .before-after-card .project-copy-card p,
+  .project-results {
+    max-width: 100%;
   }
 }
