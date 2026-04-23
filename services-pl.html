@@ -18,6 +18,14 @@
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
 
+    <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="mobile-overlay"></div>
+
     <nav class="site-nav">
       <ul>
         <li><a href="index-pl.html">Start</a></li>
@@ -39,86 +47,6 @@
     
 <section class="page-shell"><div class="container"><div class="page-hero"><p class="eyebrow">Usługi</p><h1>Usługi projektowania stron oparte na zaufaniu, przejrzystości i rozwoju</h1><p>Profesjonalne wsparcie dla marek, które chcą wyglądać mocniej online.</p></div><div class="services-grid"><article class="service-card"><div class="service-copy"><p class="kicker">01</p><h3>Projektowanie stron</h3><p>Indywidualne strony dopasowane do marki, odbiorców i celów biznesowych.</p><ul class="service-list"><li>Responsywny układ</li><li>Elegancki kierunek wizualny</li><li>Struktura nastawiona na konwersję</li></ul></div></article><article class="service-card"><div class="service-copy"><p class="kicker">02</p><h3>Redesign strony</h3><p>Odświeżenie przestarzałych stron przez lepszą hierarchię, spacing i bardziej premium wygląd.</p><ul class="service-list"><li>Lepsza prezentacja</li><li>Nowoczesny styl</li><li>Lepsza ścieżka użytkownika</li></ul></div></article><article class="service-card"><div class="service-copy"><p class="kicker">03</p><h3>Landing page</h3><p>Skupione strony promujące usługę, wydarzenie lub konkretną ofertę.</p><ul class="service-list"><li>Jasny przekaz</li><li>Mocny układ CTA</li><li>Podejście mobile-first</li></ul></div></article></div></div></section>
 
-<section class="trusted-strip">
-  <div class="container">
-    <p class="eyebrow">Zaufani klienci</p>
-    <div class="trusted-logos">
-      <span>AJ Fitness</span>
-      <span>Sergio &amp; Robi Pizzeria</span>
-      <span>Static Emotion</span>
-      <span>MB Shiny Clean</span>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials premium-testimonials">
-  <div class="container">
-
-    <p class="eyebrow">Opinie klientów</p>
-    <h2 class="testimonials-title">Co mówią moi klienci</h2>
-    <div class="testimonials-divider"><span></span></div>
-
-    <div class="testimonials-grid">
-
-      <!-- 1 -->
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/aj-fitness-logo.png" alt="AJ Fitness logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Barbara stworzyła nowoczesną, profesjonalną stronę dla mojego biznesu. Wygląda świetnie i już w pierwszych tygodniach przyniosła więcej zapytań.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>AJ Fitness</strong>
-          <span>Trening personalny</span>
-        </div>
-      </article>
-
-      <!-- 2 -->
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/sergio-robi-logo.png" alt="Sergio &amp; Robi logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Strona wygląda elegancko i profesjonalnie, a oferta jest teraz dużo bardziej czytelna. To naprawdę podniosło poziom naszej marki.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Sergio &amp; Robi Pizzeria</strong>
-          <span>Catering włoski</span>
-        </div>
-      </article>
-
-      <!-- 3 -->
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/Owl and camera logo design.png" alt="Static Emotion logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Dokładnie to, czego potrzebowałam jako fotograf — elegancka, minimalistyczna strona, skupiona na moich zdjęciach.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Static Emotion</strong>
-          <span>Fotografia</span>
-        </div>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
   </main>
   <footer class="footer">
     <div class="container footer-inner">
@@ -133,5 +61,33 @@
       </div>
     </div>
   </footer>
+<script>
+  (function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const overlay = document.querySelector('.mobile-overlay');
+    const navLinks = document.querySelectorAll('.site-nav a');
+
+    if (!menuToggle || !siteNav || !overlay) return;
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !document.body.classList.contains('menu-open');
+      document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  })();
+</script>
 </body>
 </html>

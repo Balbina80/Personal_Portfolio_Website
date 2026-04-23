@@ -11,12 +11,20 @@
   <link rel="alternate" hreflang="pl" href="https://bjdesign.co.uk/services-pl.html">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="">
+<body>
   <header class="site-header">
   <div class="container nav-wrap nav-wrap-with-logo">
     <a href="index.html" class="site-brand">
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="mobile-overlay"></div>
 
     <nav class="site-nav">
       <ul>
@@ -39,82 +47,6 @@
     
 <section class="page-shell"><div class="container"><div class="page-hero"><p class="eyebrow">Services</p><h1>Web design services built around trust, clarity and growth</h1><p>Professional support for brands that want to look stronger online.</p></div><div class="services-grid"><article class="service-card"><div class="service-copy"><p class="kicker">01</p><h3>Website design</h3><p>Custom websites tailored to your brand, audience and business goals.</p><ul class="service-list"><li>Responsive layout</li><li>Elegant visual direction</li><li>Conversion-focused structure</li></ul></div></article><article class="service-card"><div class="service-copy"><p class="kicker">02</p><h3>Website redesign</h3><p>Refreshing outdated websites with stronger hierarchy, better spacing and a more premium feel.</p><ul class="service-list"><li>Improved presentation</li><li>Modern styling</li><li>Better user journey</li></ul></div></article><article class="service-card"><div class="service-copy"><p class="kicker">03</p><h3>Landing pages</h3><p>Focused pages designed to promote a service, event or specific offer clearly.</p><ul class="service-list"><li>Clear messaging</li><li>Strong CTA flow</li><li>Mobile-first approach</li></ul></div></article></div></div></section>
 
-<section class="trusted-strip">
-  <div class="container">
-    <p class="eyebrow">Trusted by businesses</p>
-    <div class="trusted-logos">
-      <span>AJ Fitness</span>
-      <span>Sergio &amp; Robi Pizzeria</span>
-      <span>Static Emotion</span>
-      <span>MB Shiny Clean</span>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials premium-testimonials">
-  <div class="container">
-
-    <p class="eyebrow">Client love</p>
-    <h2 class="testimonials-title">What my clients say</h2>
-    <div class="testimonials-divider"><span></span></div>
-
-    <div class="testimonials-grid">
-
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/aj-fitness-logo.png" alt="AJ Fitness logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Barbara created a strong, professional website for my business. It looks amazing and brought me more enquiries within the first weeks.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>AJ Fitness</strong>
-          <span>Personal Training</span>
-        </div>
-      </article>
-
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/sergio-robi-logo.png" alt="Sergio &amp; Robi Pizzeria logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          The website looks elegant and professional, and it presents our offer in a much clearer way. It really helped elevate the brand.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Sergio &amp; Robi Pizzeria</strong>
-          <span>Italian Catering</span>
-        </div>
-      </article>
-
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/Owl and camera logo design.png" alt="Static Emotion logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Clean, elegant and thoughtfully designed. The website feels refined and gives my business a much stronger online presence.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Static Emotion</strong>
-          <span>Photography</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
   </main>
   <footer class="footer">
     <div class="container footer-inner">
@@ -129,5 +61,33 @@
       </div>
     </div>
   </footer>
+<script>
+  (function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const overlay = document.querySelector('.mobile-overlay');
+    const navLinks = document.querySelectorAll('.site-nav a');
+
+    if (!menuToggle || !siteNav || !overlay) return;
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !document.body.classList.contains('menu-open');
+      document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  })();
+</script>
 </body>
 </html>

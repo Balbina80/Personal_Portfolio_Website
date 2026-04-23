@@ -11,12 +11,20 @@
   <link rel="alternate" hreflang="pl" href="https://bjdesign.co.uk/about-pl.html">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="">
+<body>
   <header class="site-header">
   <div class="container nav-wrap nav-wrap-with-logo">
     <a href="index.html" class="site-brand">
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="mobile-overlay"></div>
 
     <nav class="site-nav">
       <ul>
@@ -46,82 +54,6 @@
     </div>
   </div>
 </section>
-Z
-<section class="trusted-strip">
-  <div class="container">
-    <p class="eyebrow">Trusted by businesses</p>
-    <div class="trusted-logos">
-      <span>AJ Fitness</span>
-      <span>Sergio &amp; Robi Pizzeria</span>
-      <span>Static Emotion</span>
-      <span>MB Shiny Clean</span>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials premium-testimonials">
-  <div class="container">
-
-    <p class="eyebrow">Client love</p>
-    <h2 class="testimonials-title">What my clients say</h2>
-    <div class="testimonials-divider"><span></span></div>
-
-    <div class="testimonials-grid">
-
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/aj-fitness-logo.png" alt="AJ Fitness logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Barbara created a strong, professional website for my business. It looks amazing and brought me more enquiries within the first weeks.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>AJ Fitness</strong>
-          <span>Personal Training</span>
-        </div>
-      </article>
-
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/sergio-robi-logo.png" alt="Sergio &amp; Robi Pizzeria logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          The website looks elegant and professional, and it presents our offer in a much clearer way. It really helped elevate the brand.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Sergio &amp; Robi Pizzeria</strong>
-          <span>Italian Catering</span>
-        </div>
-      </article>
-
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/Owl and camera logo design.png" alt="Static Emotion logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Clean, elegant and thoughtfully designed. The website feels refined and gives my business a much stronger online presence.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Static Emotion</strong>
-          <span>Photography</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
 
   </main>
   <footer class="footer">
@@ -137,5 +69,33 @@ Z
       </div>
     </div>
   </footer>
+<script>
+  (function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const overlay = document.querySelector('.mobile-overlay');
+    const navLinks = document.querySelectorAll('.site-nav a');
+
+    if (!menuToggle || !siteNav || !overlay) return;
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !document.body.classList.contains('menu-open');
+      document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  })();
+</script>
 </body>
 </html>

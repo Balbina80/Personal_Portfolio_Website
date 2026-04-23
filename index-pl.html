@@ -18,14 +18,22 @@
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
 
+    <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="mobile-overlay"></div>
+
     <nav class="site-nav">
       <ul>
-        <li><a href="index-pl.html" class="active">Home</a></li>
-        <li><a href="about-pl.html">About</a></li>
-        <li><a href="projects-pl.html">Projects</a></li>
-        <li><a href="services-pl.html">Services</a></li>
-        <li><a href="pricing-pl.html">Pricing</a></li>
-        <li><a href="contact-pl.html">Contact</a></li>
+        <li><a href="index-pl.html" class="active">Start</a></li>
+        <li><a href="about-pl.html">O mnie</a></li>
+        <li><a href="projects-pl.html">Projekty</a></li>
+        <li><a href="services-pl.html">Usługi</a></li>
+        <li><a href="pricing-pl.html">Cennik</a></li>
+        <li><a href="contact-pl.html">Kontakt</a></li>
       </ul>
     </nav>
 
@@ -60,81 +68,13 @@
 </section>
 <section class="trusted-strip">
   <div class="container">
-    <p class="eyebrow">Zaufani klienci</p>
+    <p class="eyebrow">Zaufali mi klienci</p>
     <div class="trusted-logos">
       <span>AJ Fitness</span>
       <span>Sergio &amp; Robi Pizzeria</span>
       <span>Static Emotion</span>
       <span>MB Shiny Clean</span>
     </div>
-  </div>
-</section>
-
-<section class="testimonials premium-testimonials">
-  <div class="container">
-
-    <p class="eyebrow">Opinie klientów</p>
-    <h2 class="testimonials-title">Co mówią moi klienci</h2>
-    <div class="testimonials-divider"><span></span></div>
-
-    <div class="testimonials-grid">
-
-      <!-- 1 -->
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/aj-fitness-logo.png" alt="AJ Fitness logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Barbara stworzyła nowoczesną, profesjonalną stronę dla mojego biznesu. Wygląda świetnie i już w pierwszych tygodniach przyniosła więcej zapytań.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>AJ Fitness</strong>
-          <span>Trening personalny</span>
-        </div>
-      </article>
-
-      <!-- 2 -->
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/sergio-robi-logo.png" alt="Sergio &amp; Robi logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Strona wygląda elegancko i profesjonalnie, a oferta jest teraz dużo bardziej czytelna. To naprawdę podniosło poziom naszej marki.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Sergio &amp; Robi Pizzeria</strong>
-          <span>Catering włoski</span>
-        </div>
-      </article>
-
-      <!-- 3 -->
-      <article class="testimonial-card luxe-card">
-        <div class="testimonial-logo-wrap">
-          <img src="images/Owl and camera logo design.png" alt="Static Emotion logo" class="testimonial-logo">
-        </div>
-
-        <p class="testimonial-stars">★★★★★</p>
-
-        <p class="testimonial-quote">
-          Dokładnie to, czego potrzebowałam jako fotograf — elegancka, minimalistyczna strona, skupiona na moich zdjęciach.
-        </p>
-
-        <div class="testimonial-author">
-          <strong>Static Emotion</strong>
-          <span>Fotografia</span>
-        </div>
-      </article>
-
-    </div>
-
   </div>
 </section>
 
@@ -152,5 +92,33 @@
       </div>
     </div>
   </footer>
+<script>
+  (function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const overlay = document.querySelector('.mobile-overlay');
+    const navLinks = document.querySelectorAll('.site-nav a');
+
+    if (!menuToggle || !siteNav || !overlay) return;
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !document.body.classList.contains('menu-open');
+      document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  })();
+</script>
 </body>
 </html>
