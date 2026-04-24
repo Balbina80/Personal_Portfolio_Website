@@ -2304,3 +2304,52 @@ p {
     padding-top: 118px;
   }
 }
+
+/* ===== FINAL MOBILE MENU Z-INDEX FIX ===== */
+@media (max-width: 900px) {
+  .site-header {
+    z-index: 5000 !important;
+  }
+
+  .mobile-overlay {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.58) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: 4000 !important;
+  }
+
+  body.menu-open .mobile-overlay {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .site-nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: min(82vw, 340px) !important;
+    height: 100dvh !important;
+    padding: 118px 30px 40px !important;
+    background: rgba(5, 7, 13, 0.96) !important;
+    border-left: 1px solid rgba(255,255,255,0.08) !important;
+    box-shadow: -24px 0 70px rgba(0,0,0,0.55) !important;
+    z-index: 5002 !important;
+    transition: right 0.32s ease !important;
+  }
+
+  body.menu-open .site-nav {
+    right: 0 !important;
+  }
+
+  .menu-toggle {
+    position: relative !important;
+    z-index: 5003 !important;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
