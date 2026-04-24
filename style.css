@@ -382,7 +382,7 @@ p {
   padding: calc(var(--header-h) + 84px) 0 44px;
 }
 
-/* removed fake logo because logo is already in the image */
+
 .hero-content::before {
   display: none;
   content: none;
@@ -390,8 +390,8 @@ p {
 
 .hero-copy {
   max-width: 520px;
-  margin-right: 60px;
-  padding: 0;
+  margin-right: 0;
+  transform: translate(-85px, -15px);
 }
 
 .hero-copy .eyebrow {
@@ -1216,7 +1216,6 @@ p {
     max-width: 100%;
     object-fit: contain;
     object-position: center top;
-    transform: none;
     filter: brightness(0.9) contrast(1.03) saturate(0.98);
   }
 
@@ -1990,6 +1989,7 @@ p {
 }
 
 @media (max-width: 980px) {
+
   .case-study-grid {
     grid-template-columns: 1fr;
   }
@@ -1997,12 +1997,20 @@ p {
   .case-study-visual {
     border-right: 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 24px;
+    padding: 0;
+    height: auto;
+    min-height: unset;
   }
 
   .case-study-visual img {
-    max-width: 100%;
-    max-height: 420px;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-shadow: none;
   }
 }
 
@@ -2172,4 +2180,107 @@ p {
     transparent
   );
   opacity: 0.7;
+}
+
+/* ===== FIX HOMEPAGE HERO MOBILE ===== */
+@media (max-width: 900px) {
+  .hero-home {
+    min-height: 100svh;
+    padding-bottom: 0;
+  }
+
+  .hero-media {
+    inset: 0;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero-media img {
+    width: 100%;
+    height: 100svh;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(1.02) contrast(1.04) saturate(1);
+  }
+
+  .hero-content {
+    min-height: 100svh;
+    align-items: flex-end;
+    padding: 118px 0 32px;
+  }
+
+  .hero-copy {
+    padding-top: 0;
+    max-width: 100%;
+  }
+
+  .hero-copy h1 {
+    max-width: 10.5ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-media img {
+    object-position: center top;
+  }
+
+  .hero-content {
+    padding: 112px 0 28px;
+  }
+
+  .hero-copy {
+    padding-top: 0;
+  }
+}
+
+/* ===== FINAL FIX: CASE STUDY MOBILE STACK ===== */
+@media (max-width: 900px) {
+  .case-study-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .case-study-visual {
+    width: 100% !important;
+    padding: 18px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .case-study-visual img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 18px !important;
+  }
+
+  .case-study-content {
+    width: 100% !important;
+    padding: 20px 18px 24px !important;
+  }
+
+  .case-study-results {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+
+  .result-chip {
+    width: auto !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero-media img {
+    transform: translateX(60px) !important;
+  }
+
+  .hero-copy {
+    transform: translateX(-80px) !important;
+    margin-right: 0 !important;
+  }
 }
