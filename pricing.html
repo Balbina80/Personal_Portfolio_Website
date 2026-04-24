@@ -14,9 +14,14 @@
 <body class="">
   <header class="site-header">
   <div class="container nav-wrap nav-wrap-with-logo">
+
     <a href="index.html" class="site-brand">
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
     <nav class="site-nav">
       <ul>
@@ -33,8 +38,11 @@
       <a href="pricing.html" class="active">EN</a>
       <a href="pricing-pl.html">PL</a>
     </div>
+
   </div>
 </header>
+
+<div class="mobile-overlay"></div>
   <main>
     
 <section class="page-shell"><div class="container"><div class="page-hero"><p class="eyebrow">Pricing</p><h1>Simple packages for brands that want a stronger online presence</h1><p>Clear starting points depending on the size and scope of your project.</p></div><div class="pricing-grid"><article class="price-card"><div class="price-copy"><h3>Starter</h3><p class="price">from £450</p><ul class="price-list"><li>Website up to 3 pages</li><li>Responsive layout</li><li>Basic SEO setup</li><li>Contact form</li></ul></div></article><article class="price-card"><div class="price-copy"><h3>Business</h3><p class="price">from £750</p><ul class="price-list"><li>Up to 6 pages</li><li>Custom design</li><li>Stronger brand presentation</li><li>Mobile optimisation</li></ul></div></article><article class="price-card"><div class="price-copy"><h3>Premium</h3><p class="price">from £1200</p><ul class="price-list"><li>Fully custom website</li><li>Advanced styling</li><li>Brand-focused experience</li><li>Priority support</li></ul></div></article></div></div></section>
@@ -129,5 +137,31 @@
       </div>
     </div>
   </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  const navLinks = document.querySelectorAll('.site-nav a');
+
+  if (menuToggle && siteNav && overlay) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+</script>
+
 </body>
 </html>
