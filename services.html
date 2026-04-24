@@ -14,9 +14,14 @@
 <body class="">
   <header class="site-header">
   <div class="container nav-wrap nav-wrap-with-logo">
+
     <a href="index.html" class="site-brand">
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
     <nav class="site-nav">
       <ul>
@@ -33,8 +38,11 @@
       <a href="services.html" class="active">EN</a>
       <a href="services-pl.html">PL</a>
     </div>
+
   </div>
 </header>
+
+<div class="mobile-overlay"></div>
   <main>
     
 <section class="page-shell"><div class="container"><div class="page-hero"><p class="eyebrow">Services</p><h1>Web design services built around trust, clarity and growth</h1><p>Professional support for brands that want to look stronger online.</p></div><div class="services-grid"><article class="service-card"><div class="service-copy"><p class="kicker">01</p><h3>Website design</h3><p>Custom websites tailored to your brand, audience and business goals.</p><ul class="service-list"><li>Responsive layout</li><li>Elegant visual direction</li><li>Conversion-focused structure</li></ul></div></article><article class="service-card"><div class="service-copy"><p class="kicker">02</p><h3>Website redesign</h3><p>Refreshing outdated websites with stronger hierarchy, better spacing and a more premium feel.</p><ul class="service-list"><li>Improved presentation</li><li>Modern styling</li><li>Better user journey</li></ul></div></article><article class="service-card"><div class="service-copy"><p class="kicker">03</p><h3>Landing pages</h3><p>Focused pages designed to promote a service, event or specific offer clearly.</p><ul class="service-list"><li>Clear messaging</li><li>Strong CTA flow</li><li>Mobile-first approach</li></ul></div></article></div></div></section>
@@ -129,5 +137,31 @@
       </div>
     </div>
   </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  const navLinks = document.querySelectorAll('.site-nav a');
+
+  if (menuToggle && siteNav && overlay) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+</script>
+
 </body>
 </html>
