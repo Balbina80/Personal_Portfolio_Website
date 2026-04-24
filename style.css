@@ -2284,3 +2284,23 @@ p {
     margin-right: 0 !important;
   }
 }
+
+/* ===== FINAL MOBILE SAFETY FIX ===== */
+@media (max-width: 900px) {
+  .hero-copy {
+    transform: none !important;
+    margin-right: 0 !important;
+  }
+
+  .hero-content {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  .site-nav {
+    margin: 0;
+  }
+
+  .page-shell {
+    padding-top: 118px;
+  }
+}
