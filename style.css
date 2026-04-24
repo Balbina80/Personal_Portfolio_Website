@@ -2353,3 +2353,26 @@ p {
     overflow: hidden;
   }
 }
+
+/* ===== PROJECT MOCKUP CROPPING FIX ===== */
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  object-position: center;
+  padding: 14px;
+  background: rgba(5, 7, 13, 0.92);
+}
+
+.before-after-compare .compare-panel {
+  height: auto;
+  background: rgba(5, 7, 13, 0.92);
+}
+
+.before-after-compare .compare-panel img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  padding: 10px;
+}
