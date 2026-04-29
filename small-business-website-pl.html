@@ -27,6 +27,8 @@
   <meta name="twitter:description" content="Eleganckie i responsywne strony internetowe dla małych firm, które chcą wyglądać profesjonalnie i zdobywać więcej zapytań online.">
   <meta name="twitter:image" content="https://bjdesign.co.uk/images/og-small-business-website-pl.png">
 
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -55,15 +57,12 @@
         <img src="images/gold-logo.png" alt="BJ Studio logo" class="logo">
       </a>
 
-      <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
+      <button class="menu-toggle" aria-label="Otwórz menu" aria-controls="primary-navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <div class="mobile-overlay"></div>
-
-      <nav class="site-nav">
+<nav class="site-nav" id="primary-navigation">
         <ul>
           <li><a href="index-pl.html">Start</a></li>
           <li><a href="index-pl.html#projects">Projekty</a></li>
@@ -74,6 +73,8 @@
       </nav>
     </div>
   </header>
+
+<div class="mobile-overlay" aria-hidden="true"></div>
 
   <main>
     <section class="hero">

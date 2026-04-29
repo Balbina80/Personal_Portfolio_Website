@@ -2376,3 +2376,12 @@ p {
   object-position: center;
   padding: 10px;
 }
+
+/* PRO accessibility focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}

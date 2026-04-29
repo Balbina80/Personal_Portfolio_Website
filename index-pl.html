@@ -6,9 +6,25 @@
   <title>Strony premium dla małych firm | BJ Studio</title>
   <meta name="description" content="Strona główna BJ Studio w premium stylu dla firm w Polsce i UK.">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Barbara Jaskiewicz | BJ Studio">
   <link rel="canonical" href="https://bjdesign.co.uk/index-pl.html">
   <link rel="alternate" hreflang="pl" href="https://bjdesign.co.uk/index-pl.html">
   <link rel="alternate" hreflang="en" href="https://bjdesign.co.uk/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://bjdesign.co.uk/index.html">
+  <meta property="og:title" content="Strony premium dla małych firm | BJ Studio">
+  <meta property="og:description" content="Strona główna BJ Studio w premium stylu dla firm w Polsce i UK.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bjdesign.co.uk/index-pl.html">
+  <meta property="og:image" content="https://bjdesign.co.uk/images/og-image.png">
+  <meta property="og:site_name" content="BJ Studio">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Strony premium dla małych firm | BJ Studio">
+  <meta name="twitter:description" content="Strona główna BJ Studio w premium stylu dla firm w Polsce i UK.">
+  <meta name="twitter:image" content="https://bjdesign.co.uk/images/og-image.png">
+
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,14 +34,12 @@
       <img src="images/gold-logo-1.png" alt="BJ Studio logo">
     </a>
 
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-controls="primary-navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
-<div class="mobile-overlay"></div>
-    <nav class="site-nav">
+<nav class="site-nav" id="primary-navigation">
       <ul>
         <li><a href="index-pl.html" class="active">Home</a></li>
         <li><a href="about-pl.html">About</a></li>
@@ -42,6 +56,8 @@
     </div>
   </div>
 </header>
+
+<div class="mobile-overlay" aria-hidden="true"></div>
   <main>
     
 <section class="hero-home">
