@@ -104,47 +104,78 @@
   </div>
 </section>
 
-<!-- TRUST -->
-<section class="trusted-strip">
+<div class="trusted-strip">
   <div class="container">
-    <p class="eyebrow">Zaufali mi klienci</p>
+    <p class="eyebrow">Zaufani klienci</p>
     <div class="trusted-logos">
       <span>AJ Fitness</span>
-      <span>Sergio & Robi</span>
+      <span>Sergio &amp; Robi Pizzeria</span>
       <span>Static Emotion</span>
-      <span>Shiny Clean</span>
+      <span>MB Shiny Clean</span>
     </div>
   </div>
-</section>
+</div>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials section">
+<section class="testimonials premium-testimonials">
   <div class="container">
 
-    <div class="section-heading">
-      <p class="section-tag">Opinie klientów</p>
-      <h2>Strony, które pomagają realnym biznesom rosnąć</h2>
-    </div>
+    <p class="eyebrow">Opinie klientów</p>
+    <h2 class="testimonials-title">Co mówią moi klienci</h2>
+    <div class="testimonials-divider"><span></span></div>
 
     <div class="testimonials-grid">
 
-      <article class="testimonial-card">
-        <div class="quote-mark">“</div>
-        <p class="testimonial-text">
-          Strona wygląda profesjonalnie i przyciąga klientów.
+      <!-- 1 -->
+      <article class="testimonial-card luxe-card">
+        <div class="testimonial-logo-wrap">
+          <img src="images/aj-fitness-logo.png" alt="AJ Fitness logo" class="testimonial-logo">
+        </div>
+
+        <p class="testimonial-stars">★★★★★</p>
+
+        <p class="testimonial-quote">
+          Barbara stworzyła nowoczesną, profesjonalną stronę dla mojego biznesu. Wygląda świetnie i już w pierwszych tygodniach przyniosła więcej zapytań.
         </p>
+
         <div class="testimonial-author">
-          <strong>Sergio & Robi</strong>
+          <strong>AJ Fitness</strong>
+          <span>Trening personalny</span>
         </div>
       </article>
 
-      <article class="testimonial-card">
-        <div class="quote-mark">“</div>
-        <p class="testimonial-text">
-          Jest przejrzysta i dobrze pokazuje moje usługi.
+      <!-- 2 -->
+      <article class="testimonial-card luxe-card">
+        <div class="testimonial-logo-wrap">
+          <img src="images/sergio-robi-logo.png" alt="Sergio &amp; Robi logo" class="testimonial-logo">
+        </div>
+
+        <p class="testimonial-stars">★★★★★</p>
+
+        <p class="testimonial-quote">
+          Strona wygląda elegancko i profesjonalnie, a oferta jest teraz dużo bardziej czytelna. To naprawdę podniosło poziom naszej marki.
         </p>
+
         <div class="testimonial-author">
-          <strong>Adrian</strong>
+          <strong>Sergio &amp; Robi Pizzeria</strong>
+          <span>Catering włoski</span>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="testimonial-card luxe-card">
+        <div class="testimonial-logo-wrap">
+          <img src="images/static-emotion-logo.png" alt="Static Emotion logo" class="testimonial-logo">
+        </div>
+
+        <p class="testimonial-stars">★★★★★</p>
+
+        <p class="testimonial-quote">
+          Dokładnie to, czego potrzebowałam jako fotograf — elegancka, minimalistyczna strona, skupiona na moich zdjęciach.
+        </p>
+
+        <div class="testimonial-author">
+          <strong>Static Emotion</strong>
+          <span>Fotografia</span>
         </div>
       </article>
 
@@ -153,56 +184,44 @@
   </div>
 </section>
 
-<!-- AI -->
-<section class="ai-offer-section">
-  <div class="ai-offer-inner">
-
-    <div class="ai-offer-content">
-      <span class="ai-label">NOWOŚĆ</span>
-
-      <h2>Strony wspierane AI</h2>
-
-      <p class="ai-intro">
-        Strona, która nie tylko wygląda dobrze,
-        ale pomaga zdobywać klientów.
-      </p>
-
-      <div class="ai-benefits">
-        <div>
-          <strong>Lepsze teksty</strong>
-          <span>AI dopasowane do klienta</span>
-        </div>
-        <div>
-          <strong>Więcej zapytań</strong>
-          <span>Struktura pod sprzedaż</span>
-        </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p>© 2026 BJ Studio</p>
+        <p>Barbara Jaskiewicz — Projektowanie stron i obecność marki online</p>
       </div>
-
-      <a href="contact-pl.html" class="ai-btn">Dowiedz się więcej</a>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/bj_studio_web" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/barbara.jaskiewicz.35" aria-label="Facebook">FB</a>
+        <a href="https://www.linkedin.com/in/barbara-j-96253815b/" aria-label="LinkedIn">in</a>
+      </div>
     </div>
-
-  </div>
-</section>
-
-</main>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <p>© 2026 BJ Studio</p>
-  </div>
-</footer>
+  </footer>
 
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
   const overlay = document.querySelector('.mobile-overlay');
+  const navLinks = document.querySelectorAll('.site-nav a');
 
-  menuToggle.addEventListener('click', () => {
-    document.body.classList.toggle('menu-open');
-  });
+  if (menuToggle && siteNav && overlay) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
 
-  overlay.addEventListener('click', () => {
-    document.body.classList.remove('menu-open');
-  });
+    overlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
 </script>
 
 </body>
