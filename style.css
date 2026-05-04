@@ -2552,7 +2552,9 @@ textarea:focus-visible {
 
 .ai-services {
   padding: 110px 24px;
-  background: #f8f6f1;
+  background:
+    radial-gradient(circle at top left, rgba(212, 163, 74, 0.1), transparent 30%),
+    #f8f6f1;
 }
 
 .ai-services h2 {
