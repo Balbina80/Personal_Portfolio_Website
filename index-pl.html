@@ -67,13 +67,14 @@
   </div>
 </header>
 
-<div class="mobile-overlay" aria-hidden="true"></div>
+<div class="mobile-overlay"></div>
 
 <main>
 
+<!-- HERO -->
 <section class="hero-home">
   <div class="hero-media">
-    <img src="images/barbara-hero.png" alt="Barbara Jaskiewicz przy logo BJ Studio">
+    <img src="images/barbara-hero.png" alt="Barbara Jaskiewicz">
   </div>
 
   <div class="container hero-content">
@@ -90,8 +91,8 @@
 
       <p class="lead">
         Projektuję eleganckie, nowoczesne strony internetowe,
-        które pomagają małym firmom wyglądać profesjonalnie,
-        wyróżniać się i zdobywać więcej zapytań od klientów.
+        które pomagają małym firmom wyglądać profesjonalnie
+        i zdobywać więcej klientów.
       </p>
 
       <div class="hero-buttons">
@@ -103,15 +104,83 @@
   </div>
 </section>
 
+<!-- TRUST -->
 <section class="trusted-strip">
   <div class="container">
     <p class="eyebrow">Zaufali mi klienci</p>
     <div class="trusted-logos">
       <span>AJ Fitness</span>
-      <span>Sergio &amp; Robi Pizzeria</span>
+      <span>Sergio & Robi</span>
       <span>Static Emotion</span>
-      <span>MB Shiny Clean</span>
+      <span>Shiny Clean</span>
     </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="section-tag">Opinie klientów</p>
+      <h2>Strony, które pomagają realnym biznesom rosnąć</h2>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <article class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p class="testimonial-text">
+          Strona wygląda profesjonalnie i przyciąga klientów.
+        </p>
+        <div class="testimonial-author">
+          <strong>Sergio & Robi</strong>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p class="testimonial-text">
+          Jest przejrzysta i dobrze pokazuje moje usługi.
+        </p>
+        <div class="testimonial-author">
+          <strong>Adrian</strong>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- AI -->
+<section class="ai-offer-section">
+  <div class="ai-offer-inner">
+
+    <div class="ai-offer-content">
+      <span class="ai-label">NOWOŚĆ</span>
+
+      <h2>Strony wspierane AI</h2>
+
+      <p class="ai-intro">
+        Strona, która nie tylko wygląda dobrze,
+        ale pomaga zdobywać klientów.
+      </p>
+
+      <div class="ai-benefits">
+        <div>
+          <strong>Lepsze teksty</strong>
+          <span>AI dopasowane do klienta</span>
+        </div>
+        <div>
+          <strong>Więcej zapytań</strong>
+          <span>Struktura pod sprzedaż</span>
+        </div>
+      </div>
+
+      <a href="contact-pl.html" class="ai-btn">Dowiedz się więcej</a>
+    </div>
+
   </div>
 </section>
 
@@ -119,42 +188,21 @@
 
 <footer class="footer">
   <div class="container footer-inner">
-    <div>
-      <p>© 2026 BJ Studio</p>
-      <p>Barbara Jaskiewicz — Web Design & Brand Presence</p>
-    </div>
-
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/bj_studio_web" aria-label="Instagram">IG</a>
-      <a href="https://www.facebook.com/barbara.jaskiewicz.35" aria-label="Facebook">FB</a>
-      <a href="https://www.linkedin.com/in/barbara-j-96253815b/" aria-label="LinkedIn">in</a>
-    </div>
+    <p>© 2026 BJ Studio</p>
   </div>
 </footer>
 
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
-  const siteNav = document.querySelector('.site-nav');
   const overlay = document.querySelector('.mobile-overlay');
-  const navLinks = document.querySelectorAll('.site-nav a');
 
-  if (menuToggle && siteNav && overlay) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = document.body.classList.toggle('menu-open');
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
+  menuToggle.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+  });
 
-    overlay.addEventListener('click', closeMenu);
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    function closeMenu() {
-      document.body.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-  }
+  overlay.addEventListener('click', () => {
+    document.body.classList.remove('menu-open');
+  });
 </script>
 
 </body>
