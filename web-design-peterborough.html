@@ -8,18 +8,19 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="Barbara Jaskiewicz | BJ Studio">
   <meta name="description" content="Premium web design services in Peterborough. Modern, SEO-ready websites for small businesses, freelancers and personal brands." />
-  <link rel="canonical" href="https://bjdesign.co.uk/web-design-peterborough" />
-  <link rel="alternate" hreflang="x-default" href="https://bjdesign.co.uk/web-design-peterborough" />
 
-  <!-- Open Graph -->
+  <link rel="canonical" href="https://bjdesign.co.uk/web-design-peterborough.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bjdesign.co.uk/web-design-peterborough.html" />
+
   <meta property="og:title" content="Web Design Peterborough | BJ Studio" />
   <meta property="og:description" content="Premium websites that build trust and bring enquiries." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bjdesign.co.uk/web-design-peterborough" />
-
+  <meta property="og:url" content="https://bjdesign.co.uk/web-design-peterborough.html" />
   <meta property="og:image" content="https://bjdesign.co.uk/images/og-image.png">
   <meta property="og:site_name" content="BJ Studio">
   <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="pl_PL">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Web Design Peterborough | BJ Studio">
   <meta name="twitter:description" content="Premium web design services in Peterborough. Modern, SEO-ready websites for small businesses, freelancers and personal brands.">
@@ -31,6 +32,35 @@
 </head>
 
 <body>
+
+<header class="site-header">
+  <div class="container nav-wrap nav-wrap-with-logo">
+
+    <a href="index.html" class="site-brand">
+      <img src="images/gold-logo-1.png" alt="BJ Studio logo">
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" id="primary-navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<div class="mobile-overlay" aria-hidden="true"></div>
 
 <main>
 
@@ -79,8 +109,8 @@
       </p>
 
       <div class="contact-actions">
-        <a href="tel:+447305396792" class="btn-primary">Call me</a>
-        <a href="mailto:contact@bjdesign.co.uk" class="btn-secondary">Email BJ Studio</a>
+        <a href="tel:+447305396792" class="btn btn-primary">Call me</a>
+        <a href="mailto:contact@bjdesign.co.uk" class="btn btn-outline">Email BJ Studio</a>
       </div>
 
       <p class="contact-note">Usually replies within 24h</p>
@@ -90,6 +120,46 @@
 </section>
 
 </main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <p>© 2026 BJ Studio</p>
+      <p>Barbara Jaskiewicz — Web Design & Brand Presence</p>
+    </div>
+
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/bj_studio_web" aria-label="Instagram">IG</a>
+      <a href="https://www.facebook.com/barbara.jaskiewicz.35" aria-label="Facebook">FB</a>
+      <a href="https://www.linkedin.com/in/barbara-j-96253815b/" aria-label="LinkedIn">in</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  const navLinks = document.querySelectorAll('.site-nav a');
+
+  if (menuToggle && siteNav && overlay) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+</script>
 
 </body>
 </html>
