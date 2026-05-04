@@ -2385,3 +2385,224 @@ textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
+
+/* =========================
+   AI Websites Section
+========================= */
+
+.ai-offer-section {
+  position: relative;
+  padding: 110px 24px;
+  background:
+    radial-gradient(circle at top left, rgba(212, 163, 74, 0.16), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f8f6f1 100%);
+  overflow: hidden;
+}
+
+.ai-offer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.ai-label {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(212, 163, 74, 0.14);
+  color: #9a6b20;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.ai-offer-content h2 {
+  max-width: 760px;
+  margin: 0 0 22px;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+  color: #15110d;
+}
+
+.ai-intro {
+  max-width: 680px;
+  margin: 0 0 34px;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.75;
+  color: #5f5a54;
+}
+
+.ai-benefits {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.ai-benefits div {
+  padding: 20px 22px;
+  border: 1px solid rgba(21, 17, 13, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 45px rgba(25, 20, 14, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ai-benefits div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(25, 20, 14, 0.1);
+}
+
+.ai-benefits strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.02rem;
+  color: #15110d;
+}
+
+.ai-benefits span {
+  display: block;
+  color: #6a645d;
+  line-height: 1.6;
+}
+
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: #15110d;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 18px 40px rgba(21, 17, 13, 0.22);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ai-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 55px rgba(21, 17, 13, 0.28);
+}
+
+.ai-offer-card {
+  padding: 38px;
+  border-radius: 34px;
+  background:
+    linear-gradient(145deg, rgba(21, 17, 13, 0.94), rgba(44, 34, 24, 0.94)),
+    radial-gradient(circle at top right, rgba(212, 163, 74, 0.35), transparent 40%);
+  color: #fff;
+  box-shadow: 0 30px 80px rgba(21, 17, 13, 0.22);
+}
+
+.ai-offer-card p {
+  margin: 0 0 20px;
+  color: rgba(255,255,255,0.72);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.ai-offer-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.ai-offer-card li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.ai-offer-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #d4a34a;
+  font-weight: 900;
+}
+
+@media (max-width: 860px) {
+  .ai-offer-section {
+    padding: 80px 20px;
+  }
+
+  .ai-offer-inner {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .ai-offer-card {
+    padding: 30px 24px;
+  }
+}
+
+/* =========================
+   AI SERVICES (SERVICES PAGE)
+========================= */
+
+.ai-services {
+  padding: 110px 24px;
+  background: #f8f6f1;
+}
+
+.ai-services h2 {
+  max-width: 720px;
+  margin: 0 0 20px;
+}
+
+.ai-intro {
+  max-width: 680px;
+  margin-bottom: 50px;
+  color: #6a645d;
+  line-height: 1.7;
+}
+
+.ai-packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.ai-package {
+  padding: 26px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(21,17,13,0.08);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.ai-package:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+.ai-package h3 {
+  margin-bottom: 10px;
+}
+
+.ai-package ul {
+  margin-top: 15px;
+  padding-left: 18px;
+}
+
+.ai-package.featured {
+  border: 1px solid #d4a34a;
+  box-shadow: 0 20px 60px rgba(212,163,74,0.2);
+}
+
+@media (max-width: 900px) {
+  .ai-packages {
+    grid-template-columns: 1fr;
+  }
+}
