@@ -2625,3 +2625,20 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+.price-card.featured {
+  border: 1px solid #d4a34a;
+  transform: scale(1.04);
+  box-shadow: 0 30px 80px rgba(212,163,74,0.25);
+}
+
+.price-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(212,163,74,0.15);
+  color: #9a6b20;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
