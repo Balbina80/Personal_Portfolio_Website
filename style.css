@@ -353,7 +353,7 @@ p {
   inset: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
   background: #05070d;
 }
@@ -364,7 +364,7 @@ p {
   max-width: none;
   object-fit: contain;
   object-position: left center;
-  transform: translateX(150px);
+  transform: translateX(0);
   filter: brightness(1.08) contrast(1.04) saturate(0.98);
 }
 
@@ -2653,5 +2653,11 @@ textarea:focus-visible {
 @media (max-width: 900px) {
   .before-after-card {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-media img {
+    transform: translateX(150px);
   }
 }
