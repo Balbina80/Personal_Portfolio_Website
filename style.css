@@ -2661,3 +2661,16 @@ textarea:focus-visible {
     transform: translateX(150px);
   }
 }
+
+@media (min-width: 768px) and (max-width: 950px) {
+  .hero-media img {
+    transform: translateX(90px) !important;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-copy {
+    transform: none !important;
+    max-width: 520px;
+  }
+}
